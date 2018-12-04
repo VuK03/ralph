@@ -1,5 +1,5 @@
 db:
-  image: mysql:5.7
+  image: percona-server:latest
   environment:
     MYSQL_DATABASE: ralph_ng
     MYSQL_ROOT_PASSWORD: ralph_ng
@@ -36,7 +36,7 @@ nginx:
     - web
 
 data:
-  image: mysql:5.7
+  image: percona-server:latest
   volumes:
     - /opt/static
     - /opt/media
@@ -55,5 +55,4 @@ inkpy:
   links:
     - redis:redis
   env_file:
-    - ./ralph/contrib/ralph.env
-
+- ./ralph/contrib/ralph.env
