@@ -24,7 +24,7 @@ web:
   command: gunicorn -w 4 -b 0.0.0.0:8000 -t 300 ralph.wsgi
 
 nginx:
-  image: nginx
+  image: nginx:alpine
   restart: always
   ports:
     - "80:80"
